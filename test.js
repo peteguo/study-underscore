@@ -38,14 +38,14 @@
 //...
 
 //工具函数 Utility
-  _noConflict = function() {
+  _.noConflict = function() {
     root._ = previousUnderscore;
     return this;
   };
 
-  _noop = function(){};
+  _.noop = function(){};
 
-  _random = function(min,max){
+  _.random = function(min,max){
     if(max == null){
       max = min;
       min = 0;
