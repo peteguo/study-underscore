@@ -398,5 +398,17 @@
     return _.pick(obj,iteratee,context);
   })
 
+  _.filter = _.select = function(obj,predicate,context) {
+    var results = [];
+    predicate = cb(predicate,context);
+    _.each(obj,function(value,index,list){
+      if(predicate(value,index,list)) results.push(value);
+    });
+    return results;
+  }
+
+  _.reject = function(obj,predicate,context) {
+    return _.filter(obj,_.negate(cb(predicate)),context);
+  }
 
 })();

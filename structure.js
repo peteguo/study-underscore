@@ -49,6 +49,14 @@
   // Current version.
   _.VERSION = '1.8.3';
 
+  //解决_冲突
+  // Run Underscore.js in *noConflict* mode, returning the `_` variable to its
+  // previous owner. Returns a reference to the Underscore object.
+  _.noConflict = function() {
+    root._ = previousUnderscore;
+    return this;
+  };
+
   // 创建一个chain函数，用来支持链式调用
    _.chain = function(obj) {
      var instance = _(obj);
